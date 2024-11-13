@@ -154,33 +154,33 @@ class Kindle_notes:
   def output_md(self, args):
 
     # title & author
-    md = "- Meta:\n"
-    md += "  - title: {}\n".format(self.book_title)
-    md += "  - author: {}\n".format(self.author)
-    md += "  - tags: #Books\n"
+    md = "* Meta:\n"
+    md += "  * title: {}\n".format(self.book_title)
+    md += "  * author: {}\n".format(self.author)
+    md += "  * tags: #Books\n"
 
     # all the highlights
-    md += "- # Raw Highlights & Notes:\n"
+    md += "# Raw Highlights & Notes:\n"
 
     # for each chapter...
     for chapter in self.chapter_notes:
       # add a new heading 1 bullet with the chapter title
-      md += "  - ## {}\n".format(chapter.title)
+      md += "  ## {}\n".format(chapter.title)
 
       # for each note in the chapter...
       for location in chapter.notes:
         note = chapter.notes[location]
 
         # add the highlighted text
-        md += "    - {}\n".format(note.text)
+        md += "  * {}\n".format(note.text)
 
         # if there is a note, add it in bold
         if note.note != '':
-          md += "      - **{}**\n".format(note.note)
+          md += "    * **{}**\n".format(note.note)
 
         if args.location:
           # add the source of the text
-          md += "      - {}\n".format(note.source)
+          md += "    * {}\n".format(note.source)
 
     if args.clipboard:
       pyperclip.copy(md)
