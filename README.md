@@ -18,6 +18,10 @@ Convert the example notes:
 
     kindle_notes_to_md.py example_notebook.html
 
+Common usage:
+
+     python .\kindle_notes_to_md.py -nl -y '.\BookName-Notebook.html'
+
 Optional arguments:
 
     -nl, --no-location    Do not include the source location of each note/highlight
