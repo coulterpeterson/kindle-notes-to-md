@@ -1,5 +1,7 @@
 # Kindle Notes to MD
 
+Modified from the [original repo](https://github.com/krystofl/kindle-notes-to-md) to make the output propery pasteable into Notion.
+
 Convert an HTML file of book notes exported from an Amazon Kindle to a Markdown document.
 
 The output format is particularly suitable for copy-pasting into
